@@ -1,7 +1,0 @@
-# Install the package from the repo root in editable mode
--e ..
-
-# Direct dependencies
-Django>=5.2
-wagtail>=8.0
-django-taggit>=5.0
