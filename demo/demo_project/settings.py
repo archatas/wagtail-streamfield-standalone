@@ -30,6 +30,9 @@ INSTALLED_APPS = [
     "taggit",
     # Package under development
     "wagtail_streamfield_standalone",
+    # Crispy forms
+    "crispy_forms",
+    "crispy_bootstrap5",
     # Demo
     "demo_app",
 ]
@@ -87,3 +90,6 @@ SITE_ID = 1
 
 WAGTAIL_SITE_NAME = "StreamField Standalone Demo"
 WAGTAILADMIN_BASE_URL = "http://localhost:8000"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"

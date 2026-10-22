@@ -7,7 +7,12 @@ if (!window.__wssModalObserver) {
         if (!(n.classList.contains("modal") ||
               n.classList.contains("modal-backdrop") ||
               n.classList.contains("w-dialog") ||
-              n.tagName === "DIALOG")) return;
+              n.tagName === "DIALOG" ||
+              n.hasAttribute("data-tippy-root"))) return;
+        // Already wrapped — skip (guards against the observer firing twice for
+        // the same node, e.g. when block-chooser-fix.js re-appends the element).
+        if (n.parentElement &&
+            n.parentElement.classList.contains("wagtail-streamfield-standalone")) return;
         var w = document.createElement("div");
         w.className = "wagtail-streamfield-standalone";
         n.parentNode.insertBefore(w, n);
