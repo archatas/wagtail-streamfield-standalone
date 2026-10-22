@@ -1,7 +1,12 @@
 import io
+import os
 
 import pytest
 from django.contrib.auth import get_user_model
+
+# pytest-playwright starts an asyncio event loop before tests run; Django blocks
+# synchronous DB calls made from within an async context unless this is set.
+os.environ.setdefault("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 
 SUPERUSER_USERNAME = "testadmin"
 SUPERUSER_PASSWORD = "testpass-secure-1"
