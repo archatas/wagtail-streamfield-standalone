@@ -1,0 +1,56 @@
+/* core.css resets box-sizing via html{box-sizing:border-box} + *{box-sizing:inherit}.
+   Inside @scope the html{} rule never matches (html is an ancestor, not a descendant),
+   so all elements inherit content-box from the browser default. */
+.wagtail-streamfield-standalone,
+.wagtail-streamfield-standalone *,
+.wagtail-streamfield-standalone *::before,
+.wagtail-streamfield-standalone *::after {
+  box-sizing: border-box;
+}
+
+/* Block chooser option grid: fixed 246px columns sum to 544px, overflowing the 512px
+   Tippy popup. Use flexible columns instead. */
+.wagtail-streamfield-standalone .w-combobox__optgroup {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Without an outer .w-panel--nested, blocks keep the default 40px bottom margin. */
+.wagtail-streamfield-standalone .w-panel--nested {
+  margin-bottom: 0;
+}
+
+/* In standalone mode there is no outer content panel to absorb the negative header
+   margin, so the header bleeds past the form's left edge. */
+.wagtail-streamfield-standalone .w-panel__header {
+  margin-inline-start: 0;
+}
+
+/* Align the dashed guide-line centre with the toggle button centre (0.75rem). */
+.wagtail-streamfield-standalone .w-panel--nested > .w-panel__content {
+  margin-inline-start: 0.75rem;
+}
+
+.wagtail-streamfield-standalone .c-sf-add-button {
+  margin-inline-start: 0;
+}
+
+/* Anchor-prefix is a Wagtail-admin permalink — not useful outside the admin. */
+.wagtail-streamfield-standalone .w-panel__anchor--prefix {
+  display: none;
+}
+
+.wagtail-streamfield-standalone .w-panel__heading--label {
+  margin-inline-start: 0;
+}
+
+/* core.css caps .w-field__wrapper at max-width:840px, leaving a gap between the
+   input and the action buttons in standalone context. */
+.wagtail-streamfield-standalone .w-field__wrapper {
+  max-width: none;
+}
+
+/* Equalise modal header padding so the title is vertically centred. */
+.wagtail-streamfield-standalone .modal .w-header--merged .row {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
