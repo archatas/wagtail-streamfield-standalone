@@ -2,7 +2,7 @@
 name = "wagtail-streamfield-standalone"
 version = "0.2.0"
 authors = [
-    { name="Aidas Bendoraitis", email="aidas.bendoraitis@websightful.co" },
+    { name="Aidas Bendoraitis", email="aidas@bendoraitis.lt" },
 ]
 description = "Embed Wagtail's StreamField editor outside the Wagtail admin"
 readme = "README.md"
@@ -35,8 +35,8 @@ dependencies = [
 dev = ["pytest-django"]
 
 [project.urls]
-Homepage = "https://github.com/websightful/wagtail-streamfield-standalone"
-Issues = "https://github.com/websightful/wagtail-streamfield-standalone/issues"
+Homepage = "https://github.com/archatas/wagtail-streamfield-standalone"
+Issues = "https://github.com/archatas/wagtail-streamfield-standalone/issues"
 
 [tool.bumpversion]
 current_version = "0.2.0"
